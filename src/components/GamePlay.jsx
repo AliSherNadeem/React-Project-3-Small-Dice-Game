@@ -11,7 +11,7 @@ const GamePlay = () => {
   const [selectedNumber, setselectedNumber] = useState();
   const [currentDice, setcurrentDice] = useState(1);
   const [error, seterror] = useState("");
-  const [showRules, setshowRules] = useState(false)
+  const [showRules, setshowRules] = useState(false);
 
   const generateRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
@@ -36,7 +36,7 @@ const GamePlay = () => {
   };
 
   const resetScore = () => {
-    setScore (0)
+    setScore(0);
   };
 
   return (
@@ -56,10 +56,13 @@ const GamePlay = () => {
 
       <div className="btns">
         <OutlineButton onClick={resetScore}>Reset Score</OutlineButton>
-        <Button onClick={() => setshowRules((prev)=> !prev)}> { showRules ? "Hide" : "Show" } Show Rules</Button>
+        <Button onClick={() => setshowRules((prev) => !prev)}>
+          {" "}
+          {showRules ? "Hide" : "Show"} Show Rules
+        </Button>
       </div>
 
-      {showRules && <Rules/>}
+      {showRules && <Rules />}
     </MainContainer>
   );
 };
@@ -74,13 +77,12 @@ const MainContainer = styled.div`
     margin: 0 150px;
     padding-top: 70px;
   }
-  .btns{
+  .btns {
     gap: 10px;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap:10px;
   }
 `;
